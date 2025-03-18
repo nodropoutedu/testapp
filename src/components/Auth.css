@@ -1,0 +1,182 @@
+.auth-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.auth-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.auth-content p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.auth-content form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+}
+
+.auth-content input[type="email"],
+.auth-content input[type="password"] {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.auth-content input:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.auth-content button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.auth-content button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.auth-content button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.toggle-auth {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.toggle-auth:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #ff0000;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.interest-item {
+  position: relative;
+}
+
+.interest-item input[type="checkbox"] {
+  display: none; /* Hide the default checkbox */
+}
+
+.interest-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.interest-item input[type="checkbox"]:checked + .interest-card {
+  background-color: #e0f0ff;
+  border-color: #007bff;
+}
+
+.interest-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.interest-name {
+  font-size: 14px;
+  color: #333;
+}
+
+.interest-item input:disabled + .interest-card {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #007bff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .auth-content {
+    padding: 15px;
+  }
+
+  .auth-content h2 {
+    font-size: 18px;
+  }
+
+  .auth-content p {
+    font-size: 14px;
+  }
+
+  .auth-content input[type="email"],
+  .auth-content input[type="password"] {
+    font-size: 12px;
+  }
+
+  .auth-content button {
+    font-size: 14px;
+  }
+
+  .interests-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .interest-card {
+    padding: 8px;
+  }
+
+  .interest-icon {
+    font-size: 20px;
+  }
+
+  .interest-name {
+    font-size: 12px;
+  }
+
+  .loading-spinner {
+    font-size: 14px;
+  }
+}
